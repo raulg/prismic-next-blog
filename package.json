@@ -1,0 +1,25 @@
+{
+  "name": "prismic-next-blog",
+  "version": "1.0.0",
+  "description": "Guide code for building a simple blog that uses Prismic+Next+Now",
+  "main": "index.js",
+  "scripts": {
+    "dev": "now dev",
+    "build": "next build",
+    "now-build": "next build",
+    "deploy": "now"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^8.1.0",
+    "prismic-javascript": "^2.0.3",
+    "prismic-reactjs": "^0.3.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "now": "^15.3.0"
+  }
+}

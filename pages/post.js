@@ -1,4 +1,4 @@
-function Post () {
+const Post = () => {
   return <div>Dynamic blog posts will be built here</div>
 }
 

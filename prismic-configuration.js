@@ -16,5 +16,13 @@ module.exports = {
       return `/blog/${doc.uid}`
     }
     return '/'
+  },
+
+  // Additional helper function for Next/Link components
+  hrefResolver: function (doc) {
+    if (doc.type === 'post') {
+      return `/post?uid=${doc.uid}`
+    }
+    return '/'
   }
 }

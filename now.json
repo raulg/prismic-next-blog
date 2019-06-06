@@ -1,4 +1,8 @@
 {
   "version": 2,
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  "name": "prismic-blog-guide",
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "routes": [
+    { "src": "/blog/(?<uid>[^/]+)$", "dest": "/post?uid=$uid" }
+  ]
 }

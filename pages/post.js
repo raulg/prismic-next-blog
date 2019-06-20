@@ -1,7 +1,6 @@
 import React from 'react'
-import Prismic from 'prismic-javascript'
 import { RichText, Date } from 'prismic-reactjs'
-import { apiEndpoint, accessToken } from '../prismic-configuration'
+import { client } from '../prismic-configuration'
 import Link from 'next/link'
 
 const Post = (props) => (
@@ -17,9 +16,7 @@ const Post = (props) => (
 
 Post.getInitialProps = async (context) => {
   const { uid } = context.query
-  const req = context.req
-  const API = await Prismic.getApi(apiEndpoint, { req, accessToken })
-  const post = await API.getByUID('post', uid)
+  const post = await client.getByUID('post', uid)
 
   if (context.res) {
     context.res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate')

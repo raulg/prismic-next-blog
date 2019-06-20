@@ -1,7 +1,7 @@
 import React from 'react'
 import Prismic from 'prismic-javascript'
 import { RichText, Date } from 'prismic-reactjs'
-import { apiEndpoint, accessToken, linkResolver, hrefResolver } from '../prismic-configuration'
+import { client, linkResolver, hrefResolver } from '../prismic-configuration'
 import Link from 'next/link'
 
 const BlogHome = (props) => (
@@ -24,10 +24,8 @@ const BlogHome = (props) => (
 )
 
 BlogHome.getInitialProps = async (context) => {
-  const req = context.req
-  const API = await Prismic.getApi(apiEndpoint, { req, accessToken })
-  const home = await API.getSingle('blog_home')
-  const posts = await API.query(Prismic.Predicates.at('document.type', 'post'), { orderings: '[my.post.date desc]' })
+  const home = await client.getSingle('blog_home')
+  const posts = await client.query(Prismic.Predicates.at('document.type', 'post'), { orderings: '[my.post.date desc]' })
 
   if (context.res) {
     context.res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate')

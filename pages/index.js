@@ -25,7 +25,10 @@ const BlogHome = (props) => (
 
 BlogHome.getInitialProps = async (context) => {
   const home = await client.getSingle('blog_home')
-  const posts = await client.query(Prismic.Predicates.at('document.type', 'post'), { orderings: '[my.post.date desc]' })
+  const posts = await client.query(
+    Prismic.Predicates.at('document.type', 'post'),
+    { orderings: '[my.post.date desc]' }
+  )
 
   if (context.res) {
     context.res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate')

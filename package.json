@@ -4,16 +4,14 @@
   "description": "Guide code for building a simple blog that uses Prismic+Next+Now",
   "main": "index.js",
   "scripts": {
-    "dev": "now dev",
     "build": "next build",
-    "now-build": "next build",
     "deploy": "now"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^8.1.0",
+    "next": "^9.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

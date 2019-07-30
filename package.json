@@ -4,6 +4,7 @@
   "description": "Guide code for building a simple blog that uses Prismic+Next+Now",
   "main": "index.js",
   "scripts": {
+    "dev": "next",
     "build": "next build",
     "deploy": "now"
   },
